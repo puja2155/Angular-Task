@@ -1,0 +1,46 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  .product-page {
+    padding: 20px;
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mrp {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .discount {
+    font-weight: bold;
+    color: #e63946;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup h3 {
+    margin: 0 0 10px;
+  }
+  
+  .popup button {
+    margin-top: 10px;
+  }
+  

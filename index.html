@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ProductApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body ng-controller="ProductController">
+
+  <!-- Product Page -->
+  <div class="product-page">
+    <h2>{{ product.brand }}</h2>
+    <h3>{{ product.name }}</h3>
+    <img src="https://tse3.mm.bing.net/th?id=OIP.xF9dB4u5nFoOAjG6dzoV_gHaHa&rs=1&pid=ImgDetMain" alt="Product Image">
+
+    <!-- Price Details -->
+    <p><span class="mrp">MRP: ₹{{ product.mrp }}</span> <span class="discount">₹{{ product.discountedPrice }}</span></p>
+    <p>Inclusive of all taxes</p>
+    <p class="delivery">{{ product.deliveryInfo }}</p>
+
+    <!-- Offers Button -->
+    <button ng-click="showOffers()">Offers</button>
+
+    <!-- Other Platforms Button -->
+    <button ng-click="showPlatforms()">Other Platforms</button>
+
+    <!-- Colors -->
+    <h4>Available Colors:</h4>
+    <ul>
+      <li ng-repeat="color in product.colors">{{ color }}</li>
+    </ul>
+  </div>
+
+  <!-- Popups -->
+  <div class="popup" ng-if="isOffersVisible">
+    <h3>Offers</h3>
+    <ul>
+      <li ng-repeat="offer in offers">{{ offer }}</li>
+    </ul>
+    <button ng-click="closePopup()">Close</button>
+  </div>
+
+  <div class="popup" ng-if="isPlatformsVisible">
+    <h3>Other Platforms</h3>
+    <ul>
+      <li ng-repeat="platform in platforms">
+        {{ platform.name }} - ₹{{ platform.price }} (Rating: {{ platform.rating }})
+      </li>
+    </ul>
+    <button ng-click="closePopup()">Close</button>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
